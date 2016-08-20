@@ -6,8 +6,9 @@ Authors: Alister Pineda & Adam Bignell
 */
 
 #include "string"
+using namespace std;
 
-class character(){
+class character {
 private:
 	string name;
 	string prof;
@@ -28,6 +29,7 @@ public:
 	// This allows us to instantiate with player entered name directly
 	character(string newName);
 
+	// Getters and setters below
 	string getName();
 	void setName(string newName);
 
@@ -51,4 +53,4 @@ public:
 
 	int getcAgil();
 	void setcAgil(int newcAgil);
-}
+};
