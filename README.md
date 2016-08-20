@@ -5,11 +5,11 @@
 	of our own design. These characters are added to a party in Dungeons and Dragons fashion.
 
 ## To-Do:
-	- Discuss attribute/class/race system
-		- This should be well documented in the repo
-	- Implement player class
-	- Implement party class
-	- Implement actual RPG program
+- Discuss attribute/class/race system
+	- This should be well documented in the repo
+- Implement player class
+- Implement party class
+- Implement actual RPG program
 
 ## Wishlist
 
