@@ -1,0 +1,5 @@
+/* utilities.h
+
+All of these functions are subtle utilities that will ease writing.
+
+*/
