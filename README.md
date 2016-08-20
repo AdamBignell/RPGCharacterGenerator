@@ -5,6 +5,7 @@
 	of our own design. These characters are added to a party in Dungeons and Dragons fashion.
 
 ## To-Do:
+- Figure out the GitHub shared repo model
 - Discuss attribute/class/race system
 	- This should be well documented in the repo
 - Implement player class
