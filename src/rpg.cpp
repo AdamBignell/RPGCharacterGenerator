@@ -5,6 +5,7 @@
  
 #include <cstdio>
 #include "iostream"
+#include "questions.h"
 #include <cstring>
 
 using namespace std;
@@ -24,7 +25,9 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 	
-	if (CSVtoQuestions() == false)
+	question questions[50];
+
+	if (CSVtoQuestions(questions) == false)
 	{
 		printf("CRITICAL: unable to access questions.csv\n");
 		return 1;
