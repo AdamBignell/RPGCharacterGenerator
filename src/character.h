@@ -4,7 +4,7 @@ The 'character' class is one instance of a character including their name and st
 
 Authors: Alister Pineda & Adam Bignell
 */
-
+#pragma once
 #include "string"
 using namespace std;
 

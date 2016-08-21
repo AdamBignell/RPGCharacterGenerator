@@ -5,6 +5,7 @@
  
 #include <cstdio>
 #include "iostream"
+#include "fstream"
 #include "questions.h"
 #include "utilities.h"
 #include "character.h"
@@ -20,12 +21,14 @@ character* generate_character(question* questions);
 int main (int argc, char* argv[])
 {
 	// Check for characters.csv file, create one if it doesn't exist
-	FILE* cf = fopen("characters.csv", "w+");
+	ifstream cf;
+	cf.open("characters.csv");
 	if (cf == NULL)
 	{
 		printf("CRITICAL: unable to access characters.csv\n");
 		return 1;
 	}
+
 	
 	question questions[NUM_Q];
 
@@ -52,11 +55,12 @@ int main (int argc, char* argv[])
 			case(1):
 				{
 					character* newChar = generate_character(questions);
+					writeCharacterCSV(newChar);	
 					break;
 				}
 			case(0):
 				{
-					fclose(cf);
+					cf.close();
 					return 0;
 				}
 		}
@@ -70,6 +74,13 @@ int main (int argc, char* argv[])
 character* generate_character(question* questions)
 {
 	character* newChar = new character();
+	cout << "\nPlease enter your name:" << endl;
+	string name;
+	cin >> name;
+	// This has a bug where it doesn't parse correctly when white space is included
+	// I think there is some built-in fix for this. ws?
+	newChar->setName(name);
+
 	for (int i = 0; i < NUM_Q; i++){
 		string choice;
 		cout << "\n" << questions[i].question << endl;
@@ -87,10 +98,10 @@ character* generate_character(question* questions)
 			statChange = questions[i].bConseq;
 		}
 		if (choice == "C"){
-			cout << "print something\n";
 			statChange = questions[i].cConseq;
 		}
 
+		// Somehow ALL of these conditionals are being fulfilled every time
 		if (strcmp(statChange.c_str(), "cStr")){
 			newChar->incrcStr(1);
 		}

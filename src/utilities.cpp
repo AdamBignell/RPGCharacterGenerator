@@ -6,6 +6,7 @@ All of these functions are subtle utilities that will ease writing.
 
 #include "utilities.h"
 #include <fstream>
+#include "character.h"
 #include "iostream"
 
 using namespace std;
@@ -52,4 +53,19 @@ bool CSVtoQuestions(question* questions){
 	return true;
 	}
 	return false;
+}
+
+bool writeCharacterCSV(character* character){
+	ofstream csv;
+	csv.open("characters.csv"); // THIS OVERWRITES EVERY TIME
+	csv << character->getName() << ",";
+	csv << character->getProf() << ",";
+	csv << character->getcStr() << ",";
+	csv << character->getcInt() << ",";
+	csv << character->getcEnd() << ",";
+	csv << character->getcChar() << ",";
+	csv << character->getcAgil() << ",";
+	csv << character->getcLuck() << ",\n";
+
+	return true;
 }
