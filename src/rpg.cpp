@@ -24,6 +24,12 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 	
+	if (CSVtoQuestions() == false)
+	{
+		printf("CRITICAL: unable to access questions.csv\n");
+		return 1;
+	}
+	
 	// Need to load in the questions
 
 	int sel;
