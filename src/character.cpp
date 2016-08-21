@@ -52,41 +52,41 @@ void character::setProf(string newProf){
 int character::getcStr(){
 	return cStr;
 }
-void character::setcStr(int newcStr){
-	cStr = newcStr;
+void character::incrcStr(int value){
+	cStr = cStr + value;
 }
 
 int character::getcInt(){
 	return cInt;
 }
-void character::setcInt(int newcInt){
-	cInt = newcInt;
+void character::incrcInt(int value){
+	cInt = cInt + value;
 }
 
 int character::getcEnd(){
 	return cEnd;
 }
-void character::setcEnd(int newcEnd){
-	cEnd = newcEnd;
+void character::incrcEnd(int value){
+	cEnd = cEnd + value;
 }
 
 int character::getcChar(){
 	return cChar;
 }
-void character::setcChar(int newcChar){
-	cChar = newcChar;
+void character::incrcChar(int value){
+	cChar = cChar + value;
 }
 
 int character::getcLuck(){
 	return cLuck;
 }
-void character::setcLuck(int newcLuck){
-	cLuck = newcLuck;
+void character::incrcLuck(int value){
+	cLuck = cLuck + value;
 }
 
 int character::getcAgil(){
 	return cAgil;
 }
-void character::setcAgil(int newcAgil){
-	cAgil = newcAgil;
+void character::incrcAgil(int value){
+	cAgil = cAgil + value;
 }

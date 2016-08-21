@@ -24,15 +24,8 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 	
-	// Check for characters.csv file, 
-	FILE* qf= fopen("questions.csv", "r");
-	if (qf == NULL)
-	{
-		printf("CRITICAL: \"questions.csv\" missing\n");
-		//fclose(cf);
-		//return 1;
-	}
-	
+	// Need to load in the questions
+
 	int sel;
 	
 	while(1)
@@ -61,7 +54,7 @@ int main (int argc, char* argv[])
 
 void generate_character(void)
 {
-	for (int i = 0; i < NUM_Q; i++)
+	for (int i = 1; i <= NUM_Q; i++)
 		printf("QUESTION %i\n", i);
 	return;
 }

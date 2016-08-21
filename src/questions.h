@@ -24,4 +24,4 @@ public:
 
 	string optionC;
 	string cConseq;
-}
+};

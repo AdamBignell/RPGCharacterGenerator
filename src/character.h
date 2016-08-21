@@ -37,20 +37,20 @@ public:
 	void setProf(string newProf);
 
 	int getcStr();
-	void setcStr(int newcStr);
+	void incrcStr(int value);
 
 	int getcInt();
-	void setcInt(int newcInt);
+	void incrcInt(int value);
 
 	int getcEnd();
-	void setcEnd(int newcEnd);
+	void incrcEnd(int value);
 
 	int getcChar();
-	void setcChar(int newcChar);
+	void incrcChar(int value);
 
 	int getcLuck();
-	void setcLuck(int newcLuck);
+	void incrcLuck(int value);
 
 	int getcAgil();
-	void setcAgil(int newcAgil);
+	void incrcAgil(int value);
 };

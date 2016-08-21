@@ -4,8 +4,12 @@ All of these functions are subtle utilities that will ease writing.
 
 */
 
-#include "string"
+#include <string>
+#include <fstream>
 using namespace std;
 #include "questions.h"
 
-question* CSVtoQuestions(string fileName);
+bool CSVtoQuestions(string fileName, question* questions){
+	ifstream csv( fileName );
+
+}
