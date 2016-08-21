@@ -12,7 +12,7 @@
 
 using namespace std;
 
-#define NUM_Q 1
+#define NUM_Q 2
 
 // prototypes
 character* generate_character(question* questions);
@@ -91,23 +91,22 @@ character* generate_character(question* questions)
 			statChange = questions[i].cConseq;
 		}
 
-		if (statChange == "cStr"){
+		if (strcmp(statChange.c_str(), "cStr")){
 			newChar->incrcStr(1);
 		}
-		if (statChange == "cInt"){
+		if (strcmp(statChange.c_str(), "cInt")){
 			newChar->incrcInt(1);
 		}
-		if (statChange == "cEnd"){
+		if (strcmp(statChange.c_str(), "cEnd")){
 			newChar->incrcEnd(1);
 		}
 		if (strcmp(statChange.c_str(), "cChar")){
 			newChar->incrcChar(1);
-			cout << "Your charisma is now set to:" << newChar->getcChar() << endl;
 		}
-		if (statChange == "cLuck"){
+		if (strcmp(statChange.c_str(), "cLuck")){
 			newChar->incrcLuck(1);
 		}
-		if (statChange == "cAgil"){
+		if (strcmp(statChange.c_str(), "cAgil")){
 			newChar->incrcAgil(1);
 		}
 	}
