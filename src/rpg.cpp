@@ -87,7 +87,7 @@ character* generate_character(question* questions)
 			statChange = questions[i].bConseq;
 		}
 		if (choice == "C"){
-			cout << "print something";
+			cout << "print something\n";
 			statChange = questions[i].cConseq;
 		}
 
@@ -100,7 +100,7 @@ character* generate_character(question* questions)
 		if (statChange == "cEnd"){
 			newChar->incrcEnd(1);
 		}
-		if (!strcmp(statChange, "cChar")){
+		if (strcmp(statChange.c_str(), "cChar")){
 			newChar->incrcChar(1);
 			cout << "Your charisma is now set to:" << newChar->getcChar() << endl;
 		}
