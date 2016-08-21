@@ -1,2 +1,2 @@
 all:
-	g++ rpg.cpp -o rpg
+	g++ rpg.cpp character.cpp utilities.cpp -o rpg

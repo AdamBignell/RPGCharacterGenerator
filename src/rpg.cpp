@@ -6,6 +6,8 @@
 #include <cstdio>
 #include "iostream"
 #include "questions.h"
+#include "utilities.h"
+#include "character.h"
 #include <cstring>
 
 using namespace std;
@@ -13,7 +15,7 @@ using namespace std;
 #define NUM_Q 50
 
 // prototypes
-void generate_character(void);
+character* generate_character(question* questions);
  
 int main (int argc, char* argv[])
 {
@@ -32,7 +34,7 @@ int main (int argc, char* argv[])
 		printf("CRITICAL: unable to access questions.csv\n");
 		return 1;
 	}
-	
+
 	// Need to load in the questions
 
 	int sel;
@@ -48,7 +50,7 @@ int main (int argc, char* argv[])
 		switch (sel)
 		{
 			case(1):
-				generate_character();
+				character* newChar = generate_character(questions);
 				break;
 			case(0):
 				fclose(cf);
@@ -61,9 +63,47 @@ int main (int argc, char* argv[])
 	return 0;
 }
 
-void generate_character(void)
+character* generate_character(question* questions)
 {
-	for (int i = 1; i <= NUM_Q; i++)
-		printf("QUESTION %i\n", i);
-	return;
+	character* newChar = new character();
+	for (int i = 0; i < NUM_Q; i++)
+		string choice;
+		cout << "\n" << questions[i].question << endl;
+		cout << "\t A." << questions[i].optionA << endl;
+		cout << "\t B." << questions[i].optionB << endl;
+		cout << "\t C." << questions[i].optionC << endl;
+		cout <<  "\n Please enter A, B, or C" << endl;
+		cin >> choice;
+
+		string statChange = "";
+		if (choice == 'A'){
+			statChange = questions[i].aConseq;
+		}
+		if (choice == 'B'){
+			statChange = questions[i].bConseq;
+		}
+		if (choice == 'C'){
+			statChange = questions[i].cConseq;
+		}
+
+		if (statChange == "cStr"){
+			newChar->incrcStr(1);
+		}
+		if (statChange == "cInt"){
+			newChar->incrcInt(1);
+		}
+		if (statChange == "cEnd"){
+			newChar->incrcEnd(1);
+		}
+		if (statChange == "cChar"){
+			newChar->incrcChar(1);
+		}
+		if (statChange == "cLuck"){
+			newChar->incrcLuck(1);
+		}
+		if (statChange == "cAgil"){
+			newChar->incrcAgil(1);
+		}
+
+	return newChar;
 }

@@ -7,6 +7,7 @@ Author: Alister Pineda & Adam Bignell
 */
 
 #include "string"
+#pragma once
 using namespace std;
 
 class question {
