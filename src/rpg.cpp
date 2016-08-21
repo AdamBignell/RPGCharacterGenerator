@@ -79,7 +79,7 @@ character* generate_character(question* questions)
 		cout <<  "\nPlease enter A, B, or C:" << endl;
 		cin >> choice;
 
-		string statChange = "";
+		string statChange;
 		if (choice == "A"){
 			statChange = questions[i].aConseq;
 		}
@@ -87,6 +87,7 @@ character* generate_character(question* questions)
 			statChange = questions[i].bConseq;
 		}
 		if (choice == "C"){
+			cout << "print something";
 			statChange = questions[i].cConseq;
 		}
 
@@ -99,8 +100,9 @@ character* generate_character(question* questions)
 		if (statChange == "cEnd"){
 			newChar->incrcEnd(1);
 		}
-		if (statChange == "cChar"){
+		if (!strcmp(statChange, "cChar")){
 			newChar->incrcChar(1);
+			cout << "Your charisma is now set to:" << newChar->getcChar() << endl;
 		}
 		if (statChange == "cLuck"){
 			newChar->incrcLuck(1);
