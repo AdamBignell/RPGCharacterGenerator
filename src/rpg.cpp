@@ -18,7 +18,7 @@ int main (int argc, char* argv[])
 		printf("DOESN'T EXIST :(\n");
 	}
 	
-	FILE* qf= fopen("questions.csv", "r")
+	FILE* qf= fopen("questions.csv", "r");
 	if (qf == NULL)
 	{
 		printf("DOESN'T EXIST :(\n");
@@ -28,13 +28,23 @@ int main (int argc, char* argv[])
 	
 	while(1)
 	{
-		printf("Select an option:\n");
-		printf("1	-	Generate Character");
-		printf("0	-	Exit");
-		printf("\n\nSelect: ");
+		printf("Select an option:\n\n");
+		printf("1	-	Generate Character\n");
+		printf("0	-	Exit\n");
+		printf("\nNum: ");
+		cin >> sel;
+		
+		switch (sel)
+		{
+			case(1):
+				break;
+			case(0):
+				fclose(cf);
+				return 0;
+		}
 		
 	}
 	
-	fclose(f);
+	
 	return 0;
 }
