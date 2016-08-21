@@ -6,6 +6,6 @@ All of these functions are subtle utilities that will ease writing.
 
 #include "string"
 using namespace std;
-#include "question.h"
+#include "questions.h"
 
-questions* CSVtoQuestions(string fileName);
+question* CSVtoQuestions(string fileName);
