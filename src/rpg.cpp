@@ -76,12 +76,16 @@ character* generate_character(question* questions)
 	character* newChar = new character();
 	cout << "\nPlease enter your name:" << endl;
 	string name;
-	cin >> name;
-	// This has a bug where it doesn't parse correctly when white space is included
-	// I think there is some built-in fix for this. ws?
+
+	// These two lines accept a name and ignore whiteapce
+	cin >> ws;
+	getline(cin, name);
+
 	newChar->setName(name);
 
 	for (int i = 0; i < NUM_Q; i++){
+		// This loop "asks" all the questions loaded from the csv
+		// Note that it requires proper setting of NUM_Q lest the program seg fault
 		string choice;
 		cout << "\n" << questions[i].question << endl;
 		cout << "\t A." << questions[i].optionA << endl;
@@ -101,26 +105,31 @@ character* generate_character(question* questions)
 			statChange = questions[i].cConseq;
 		}
 
-		// Somehow ALL of these conditionals are being fulfilled every time
-		if (strcmp(statChange.c_str(), "cStr")){
+
+		// Note that the ' == 0' is strictly necessary
+		// As well, be very prudent with whitespace in the CSV 'attribute' fields
+		if (strcmp(statChange.c_str(), "cStr") == 0){
 			newChar->incrcStr(1);
 		}
-		if (strcmp(statChange.c_str(), "cInt")){
+		if (strcmp(statChange.c_str(), "cInt") == 0){
 			newChar->incrcInt(1);
 		}
-		if (strcmp(statChange.c_str(), "cEnd")){
+		if (strcmp(statChange.c_str(), "cEnd") == 0){
 			newChar->incrcEnd(1);
 		}
-		if (strcmp(statChange.c_str(), "cChar")){
+		if (strcmp(statChange.c_str(), "cChar") == 0){
+			cout << "why?" << endl;
 			newChar->incrcChar(1);
 		}
-		if (strcmp(statChange.c_str(), "cLuck")){
+		if (strcmp(statChange.c_str(), "cLuck") == 0){
 			newChar->incrcLuck(1);
 		}
-		if (strcmp(statChange.c_str(), "cAgil")){
+		if (strcmp(statChange.c_str(), "cAgil") == 0){
 			newChar->incrcAgil(1);
 		}
 	}
 
-	return newChar;
+	// Need something that interprets profession. To be discussed with Alister
+
+	return newChar; // Return a now-complete instance of the player
 }

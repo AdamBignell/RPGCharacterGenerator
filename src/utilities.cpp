@@ -57,7 +57,8 @@ bool CSVtoQuestions(question* questions){
 
 bool writeCharacterCSV(character* character){
 	ofstream csv;
-	csv.open("characters.csv"); // THIS OVERWRITES EVERY TIME
+	// This is an odd-looking syntax but it specifies to open that we wish to explicitly output and append
+	csv.open("characters.csv", ios::out | ios::app );
 	csv << character->getName() << ",";
 	csv << character->getProf() << ",";
 	csv << character->getcStr() << ",";
