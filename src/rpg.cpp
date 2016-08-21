@@ -12,7 +12,7 @@
 
 using namespace std;
 
-#define NUM_Q 50
+#define NUM_Q 1
 
 // prototypes
 character* generate_character(question* questions);
@@ -27,7 +27,7 @@ int main (int argc, char* argv[])
 		return 1;
 	}
 	
-	question questions[50];
+	question questions[NUM_Q];
 
 	if (CSVtoQuestions(questions) == false)
 	{
@@ -50,11 +50,15 @@ int main (int argc, char* argv[])
 		switch (sel)
 		{
 			case(1):
-				character* newChar = generate_character(questions);
-				break;
+				{
+					character* newChar = generate_character(questions);
+					break;
+				}
 			case(0):
-				fclose(cf);
-				return 0;
+				{
+					fclose(cf);
+					return 0;
+				}
 		}
 		
 	}
@@ -66,23 +70,23 @@ int main (int argc, char* argv[])
 character* generate_character(question* questions)
 {
 	character* newChar = new character();
-	for (int i = 0; i < NUM_Q; i++)
+	for (int i = 0; i < NUM_Q; i++){
 		string choice;
 		cout << "\n" << questions[i].question << endl;
 		cout << "\t A." << questions[i].optionA << endl;
 		cout << "\t B." << questions[i].optionB << endl;
 		cout << "\t C." << questions[i].optionC << endl;
-		cout <<  "\n Please enter A, B, or C" << endl;
+		cout <<  "\nPlease enter A, B, or C:" << endl;
 		cin >> choice;
 
 		string statChange = "";
-		if (choice == 'A'){
+		if (choice == "A"){
 			statChange = questions[i].aConseq;
 		}
-		if (choice == 'B'){
+		if (choice == "B"){
 			statChange = questions[i].bConseq;
 		}
-		if (choice == 'C'){
+		if (choice == "C"){
 			statChange = questions[i].cConseq;
 		}
 
@@ -104,6 +108,7 @@ character* generate_character(question* questions)
 		if (statChange == "cAgil"){
 			newChar->incrcAgil(1);
 		}
+	}
 
 	return newChar;
 }
