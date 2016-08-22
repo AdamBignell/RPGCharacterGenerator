@@ -56,17 +56,17 @@ bool CSVtoQuestions(question* questions){
 }
 
 bool writeCharacterCSV(character* character){
-	ofstream csv;
-	// This is an odd-looking syntax but it specifies to open that we wish to explicitly output and append
-	csv.open("characters.csv", ios::out | ios::app );
-	csv << character->getName() << ",";
-	csv << character->getProf() << ",";
-	csv << character->getcStr() << ",";
-	csv << character->getcInt() << ",";
-	csv << character->getcEnd() << ",";
-	csv << character->getcChar() << ",";
-	csv << character->getcAgil() << ",";
-	csv << character->getcLuck() << ",\n";
+	// ofstream csv;
+	// // This is an odd-looking syntax but it specifies to open that we wish to explicitly output and append
+	// csv.open("characters.csv", ios::out | ios::app );
+	// csv << character->getName() << ",";
+	// csv << character->getProf() << ",";
+	// csv << character->getcStr() << ",";
+	// csv << character->getcInt() << ",";
+	// csv << character->getcEnd() << ",";
+	// csv << character->getcChar() << ",";
+	// csv << character->getcAgil() << ",";
+	// csv << character->getcLuck() << ",\n";
 
 	return true;
 }
