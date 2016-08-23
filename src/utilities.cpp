@@ -103,7 +103,6 @@ bool askQuestions(question* questions, character* newChar){
 			statChange = questions[i].cConseq;
 		}
 
-
 		// Note that the ' == 0' is strictly necessary
 		// As well, be very prudent with whitespace in the CSV 'attribute' fields
 		if (strcmp(statChange.c_str(), "cStr") == 0){

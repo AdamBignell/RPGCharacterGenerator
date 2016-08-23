@@ -84,6 +84,7 @@ character* generate_character(question* questions)
 	newChar->setName(name);
 
 	askQuestions(questions, newChar);
+	
 	// Need something that interprets profession. To be discussed with Alister
 
 	return newChar; // Return a now-complete instance of the player
