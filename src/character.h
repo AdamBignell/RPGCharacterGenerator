@@ -20,7 +20,7 @@ private:
 	int cInt;
 	int cEnd;
 	int cChar;
-	int cLuck;
+	int cWill;
 	int cAgil;
 
 public:
@@ -48,8 +48,8 @@ public:
 	int getcChar();
 	void incrcChar(int value);
 
-	int getcLuck();
-	void incrcLuck(int value);
+	int getcWill();
+	void incrcWill(int value);
 
 	int getcAgil();
 	void incrcAgil(int value);

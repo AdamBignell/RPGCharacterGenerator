@@ -66,7 +66,7 @@ bool writeCharacterCSV(character* character){
 	// csv << character->getcEnd() << ",";
 	// csv << character->getcChar() << ",";
 	// csv << character->getcAgil() << ",";
-	// csv << character->getcLuck() << ",\n";
+	// csv << character->getcWill() << ",\n";
 
 	return true;
 }

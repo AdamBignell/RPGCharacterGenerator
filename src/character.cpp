@@ -17,7 +17,7 @@ character::character(){
 	cInt = 0;
 	cEnd = 0;
 	cChar = 0;
-	cLuck = 0;
+	cWill = 0;
 	cAgil = 0;
 }
 
@@ -30,7 +30,7 @@ character::character(string newName){
 	cInt = 0;
 	cEnd = 0;
 	cChar = 0;
-	cLuck = 0;
+	cWill = 0;
 	cAgil = 0;
 }
 
@@ -77,11 +77,11 @@ void character::incrcChar(int value){
 	cChar = cChar + value;
 }
 
-int character::getcLuck(){
-	return cLuck;
+int character::getcWill(){
+	return cWill;
 }
-void character::incrcLuck(int value){
-	cLuck = cLuck + value;
+void character::incrcWill(int value){
+	cWill = cWill + value;
 }
 
 int character::getcAgil(){

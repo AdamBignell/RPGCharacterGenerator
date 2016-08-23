@@ -121,8 +121,8 @@ character* generate_character(question* questions)
 			cout << "why?" << endl;
 			newChar->incrcChar(1);
 		}
-		if (strcmp(statChange.c_str(), "cLuck") == 0){
-			newChar->incrcLuck(1);
+		if (strcmp(statChange.c_str(), "cWill") == 0){
+			newChar->incrcWill(1);
 		}
 		if (strcmp(statChange.c_str(), "cAgil") == 0){
 			newChar->incrcAgil(1);
