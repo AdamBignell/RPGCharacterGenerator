@@ -12,7 +12,7 @@ All of these functions are subtle utilities that will ease writing.
 
 using namespace std;
 
-#define NUM_Q 2
+#define NUM_Q 20
 
 bool CSVtoQuestions(question* questions){
 	string line;
@@ -79,7 +79,7 @@ bool askQuestions(question* questions, character* newChar){
 		// This loop "asks" all the questions loaded from the csv
 		// Note that it requires proper setting of NUM_Q lest the program seg fault
 		string choice;
-		cout << "\n" << questions[i].question << endl;
+		cout << questions[i].question << endl;
 		cout << "\t A." << questions[i].optionA << endl;
 		cout << "\t B." << questions[i].optionB << endl;
 		cout << "\t C." << questions[i].optionC << endl;

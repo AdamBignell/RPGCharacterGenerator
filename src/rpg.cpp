@@ -13,7 +13,7 @@
 
 using namespace std;
 
-#define NUM_Q 2
+#define NUM_Q 20
 
 // prototypes
 character* generate_character(question* questions);
@@ -81,6 +81,7 @@ character* generate_character(question* questions)
 	cin >> ws;
 	getline(cin, name);
 
+	cout << "\n";
 	newChar->setName(name);
 
 	askQuestions(questions, newChar);
