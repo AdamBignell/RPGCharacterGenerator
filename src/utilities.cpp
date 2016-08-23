@@ -73,8 +73,6 @@ bool writeCharacterCSV(character* character){
 
 	return true;
 }
-<<<<<<< HEAD
-=======
 
 bool askQuestions(question* questions, character* newChar){
 	for (int i = 0; i < NUM_Q; i++){
@@ -130,4 +128,3 @@ bool askQuestions(question* questions, character* newChar){
 	}
 	return true;
 }
->>>>>>> 8ff103e7168868d4eadd0f7064b98372f4c45eab
