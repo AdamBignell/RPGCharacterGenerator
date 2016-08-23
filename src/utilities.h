@@ -12,3 +12,5 @@ using namespace std;
 bool CSVtoQuestions(question* questions);
 
 bool writeCharacterCSV(character* character);
+
+bool askQuestions(question* questions, character* newChar);
