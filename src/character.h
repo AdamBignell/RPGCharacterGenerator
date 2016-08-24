@@ -53,4 +53,6 @@ public:
 
 	int getcAgil();
 	void incrcAgil(int value);
+
+	void assignProf();
 };

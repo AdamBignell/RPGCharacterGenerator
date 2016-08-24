@@ -85,6 +85,8 @@ character* generate_character(question* questions)
 	newChar->setName(name);
 
 	askQuestions(questions, newChar);
+
+	newChar->assignProf();
 	
 	// Need something that interprets profession. To be discussed with Alister
 
