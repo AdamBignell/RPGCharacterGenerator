@@ -59,19 +59,19 @@ bool CSVtoQuestions(question* questions){
 }
 
 bool writeCharacterCSV(character* character){
-	// ofstream csv;
-	// // This is an odd-looking syntax but it specifies to open that we wish to explicitly output and append
-	// csv.open("characters.csv", ios::out | ios::app );
-	// csv << character->getName() << ",";
-	// csv << character->getProf() << ",";
-	// csv << character->getcStr() << ",";
-	// csv << character->getcInt() << ",";
-	// csv << character->getcEnd() << ",";
-	// csv << character->getcChar() << ",";
-	// csv << character->getcAgil() << ",";
-	// csv << character->getcWill() << ",\n";
+	ofstream csv;
+	// This is an odd-looking syntax but it specifies to open that we wish to explicitly output and append
+	csv.open("characters.csv", ios::out | ios::app );
+	csv << character->getName() << ",";
+	csv << character->getProf() << ",";
+	csv << character->getcStr() << ",";
+	csv << character->getcInt() << ",";
+	csv << character->getcEnd() << ",";
+	csv << character->getcChar() << ",";
+	csv << character->getcWill() << ",";
+	csv << character->getcAgil() << ",\n";
 
-	// return true;
+	return true;
 }
 
 bool askQuestions(question* questions, character* newChar){
@@ -115,7 +115,6 @@ bool askQuestions(question* questions, character* newChar){
 			newChar->incrcEnd(1);
 		}
 		if (strcmp(statChange.c_str(), "cChar") == 0){
-			cout << "why?" << endl;
 			newChar->incrcChar(1);
 		}
 		if (strcmp(statChange.c_str(), "cWill") == 0){

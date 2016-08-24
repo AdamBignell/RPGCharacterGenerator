@@ -55,7 +55,8 @@ int main (int argc, char* argv[])
 			case(1):
 				{
 					character* newChar = generate_character(questions);
-					writeCharacterCSV(newChar);	
+					writeCharacterCSV(newChar);
+					newChar->printDetails();
 					break;
 				}
 			case(0):
@@ -87,8 +88,6 @@ character* generate_character(question* questions)
 	askQuestions(questions, newChar);
 
 	newChar->assignProf();
-	
-	// Need something that interprets profession. To be discussed with Alister
 
 	return newChar; // Return a now-complete instance of the player
 }

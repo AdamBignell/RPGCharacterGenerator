@@ -6,6 +6,7 @@ Authors: Alister Pineda & Adam Bignell
 */
 
 #include "character.h"
+#include "iostream"
 #include "string"
 using namespace std;
 
@@ -103,21 +104,38 @@ void character::assignProf(){
 	traitArray[4] = cWill;
 	traitArray[5] = cAgil;
 
-	int max = -1;
-	int max2 = -1;
+	// Useful for Listing info
+	// Probably will become the "Show stats" option
+	// cout << "Strength is: " << traitArray[0] << endl;
+	// cout << "Intelligence is: " << traitArray[1] << endl;
+	// cout << "Endurance is: " << traitArray[2] << endl;
+	// cout << "Charisma is: " << traitArray[3] << endl;
+	// cout << "Willpower is: " << traitArray[4] << endl;
+	// cout << "Agility is: " << traitArray[5] << endl;
+
+	int max = 0;
+	int max2 = 0;
 
 	for (int i = 0; i < 6; i++){
-		if (traitArray[i] > max){
+		if (traitArray[i] > traitArray[max]){
 			max = i;
 		}
-		else if ( (traitArray[i] > max2) && (traitArray[i] <= max)){
+		// Note there is a nasty bug here:
+		// If the player just so happens to have many repeated values for traits,
+		// this function assumes that their "second best" is the last instance of this repetition
+		// We could either have handling for this case, or invent some class that represents 'balance'
+		// As it stands the traits are biased in reverse order (according to traitArray)
+		else if ( (traitArray[i] >= traitArray[max2]) && (traitArray[i] <= traitArray[max]) ){
 			max2 = i;
 		}
 	}
 
+	cout << "Max is: " << max << endl;
+	cout << "Max2 is: " << max2 << endl;
+
 	// If the difference between max and max2 is sufficiently wide,
 	// we consider the player of "pure profession"
-	if (max - max2 >= 4){
+	if (traitArray[max] - traitArray[max2] >= 4){
 		if (max == 0){
 			prof = "PureDroid";
 		}
@@ -142,50 +160,55 @@ void character::assignProf(){
 	// The below represents "mixed professions"
 	else {
 		if ((max == 0 && max2 == 1) || (max == 1 && max2 == 0)){
-			prof == "DataDroid";
+			prof = "DataDroid";
 		}
 		if ((max == 0 && max2 == 2) || (max == 2 && max2 == 0)){
-			prof == "MechPilot";
+			prof = "MechPilot";
 		}
 		if ((max == 0 && max2 == 3) || (max == 3 && max2 == 0)){
-			prof == "MECHiavelli";
+			prof = "MECHiavelli";
 		}
 		if ((max == 0 && max2 == 4) || (max == 4 && max2 == 0)){
-			prof == "BattleBishop";
+			prof = "BattleBishop";
 		}
 		if ((max == 0 && max2 == 5) || (max == 5 && max2 == 0)){
-			prof == "Hoverbiker";
+			prof = "Hoverbiker";
 		}
 		if ((max == 1 && max2 == 2) || (max == 2 && max2 == 1)){
-			prof == "Mal-Medic";
+			prof = "Mal-Medic";
 		}
 		if ((max == 1 && max2 == 3) || (max == 3 && max2 == 1)){
-			prof == "Stemcellian";
+			prof = "Stemcellian";
 		}
 		if ((max == 1 && max2 == 4) || (max == 4 && max2 == 1)){
-			prof == "DataPriest";
+			prof = "DataPriest";
 		}
 		if ((max == 1 && max2 == 5) || (max == 5 && max2 == 1)){
-			prof == "NanoForm";
+			prof = "NanoForm";
 		}
 		if ((max == 2 && max2 == 3) || (max == 3 && max2 == 2)){
-			prof == "Body Guardian";
+			prof = "Body Guardian";
 		}
 		if ((max == 2 && max2 == 4) || (max == 4 && max2 == 2)){
-			prof == "Bio-Immune";
+			prof = "Bio-Immune";
 		}
 		if ((max == 2 && max2 == 5) || (max == 5 && max2 == 2)){
-			prof == "Morpher";
+			prof = "Morpher";
 		}
 		if ((max == 3 && max2 == 4) || (max == 4 && max2 == 3)){
-			prof == "OmniClone";
+			prof = "OmniClone";
 		}
 		if ((max == 3 && max2 == 5) || (max == 5 && max2 == 3)){
-			prof == "Netsurgent";
+			prof = "Netsurgent";
 		}
 		if ((max == 4 && max2 == 5) || (max == 5 && max2 == 4)){
-			prof == "NeuroHacker";
+			prof = "NeuroHacker";
 		}
 	}
+	return;
+}
+
+void character::printDetails(){
+	cout << "\n" << getName() << ", your profession is: " << getProf() << endl;
 	return;
 }

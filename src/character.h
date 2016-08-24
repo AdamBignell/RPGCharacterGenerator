@@ -55,4 +55,6 @@ public:
 	void incrcAgil(int value);
 
 	void assignProf();
+
+	void printDetails();
 };
